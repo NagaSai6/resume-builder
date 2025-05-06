@@ -2,26 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer base {
+  /* Custom root variables */
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 224 71.4% 4.1%; /* Dark Gray */
+    --card: 0 0% 100%; /* White for cards */
+    --card-foreground: 224 71.4% 4.1%; /* Dark Gray for card text */
+    --popover: 0 0% 100%; /* White for popover */
+    --popover-foreground: 224 71.4% 4.1%; /* Dark Gray for popover text */
+    --primary: 220.9 39.3% 11%; /* Classic Blue */
+    --primary-foreground: 210 20% 98%; /* White for primary text */
+    --secondary: 220 14.3% 95.9%; /* Modern Gray */
+    --secondary-foreground: 220.9 39.3% 11%; /* Dark Gray */
+    --muted: 220 14.3% 95.9%; /* Light Gray */
+    --muted-foreground: 220 8.9% 46.1%; /* Dark Gray */
+    --accent: 220 14.3% 95.9%; /* Blue Accent */
+    --accent-foreground: 220.9 39.3% 11%; /* White for accent text */
+    --destructive: 0 84.2% 60.2%; /* Energetic Orange */
+    --destructive-foreground: 210 20% 98%; /* White for destructive text */
+    --border: 220 13% 91%; /* Light Gray Border */
+    --input: 220 13% 91%; /* Light Gray Input */
+    --ring: 224 71.4% 4.1%; /* Blue Ring */
+    --chart-1: 12 76% 61%; /* Vibrant Orange */
+    --chart-2: 173 58% 39%; /* Green */
+    --chart-3: 197 37% 24%; /* Blue */
+    --chart-4: 43 74% 66%; /* Purple */
+    --chart-5: 27 87% 67%; /* Red */
+    --radius: 0.5rem; /* Border radius */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --font-roboto: var(--font-roboto);
+    --font-opensans: var(--font-opensans);
+    --font-playfair: var(--font-playfair);
+    --font-lora: var(--font-lora);
+    --font-montserrat: var(--font-montserrat);
+    --font-poppins: var(--font-poppins);
+    --font-raleway: var(--font-raleway);
+    --font-inter: var(--font-inter);
+    --font-merriweather: var(--font-merriweather);
+    --font-nunito: var(--font-nunito);
+    --font-sourcesans: var(--font-sourcesans);
+    --font-ubuntu: var(--font-ubuntu);
+    --font-notosansdevanagari: var(--font-notosansdevanagari);
+    --font-aladin: var(--font-aladin);
+  }
+
+  /* Dark mode styles */
+  .dark {
+    --background: 224 71.4% 4.1%; /* Dark Gray */
+    --foreground: 210 20% 98%; /* White text */
+    --card: 224 71.4% 4.1%; /* Dark Blue for cards */
+    --card-foreground: 210 20% 98%; /* White for card text */
+    --popover: 224 71.4% 4.1%; /* Dark Blue for popover */
+    --popover-foreground: 210 20% 98%; /* White for popover text */
+    --primary: 210 20% 98%; /* White */
+    --primary-foreground: 220.9 39.3% 11%; /* Dark Blue for primary text */
+    --secondary: 215 27.9% 16.9%; /* Gray */
+    --secondary-foreground: 210 20% 98%; /* White for secondary text */
+    --muted: 215 27.9% 16.9%; /* Gray */
+    --muted-foreground: 217.9 10.6% 64.9%; /* White for muted text */
+    --accent: 215 27.9% 16.9%; /* Blue Accent */
+    --accent-foreground: 210 20% 98%; /* White for accent text */
+    --destructive: 0 62.8% 30.6%; /* Orange */
+    --destructive-foreground: 210 20% 98%; /* White for destructive text */
+    --border: 215 27.9% 16.9%; /* Light Gray Border */
+    --input: 215 27.9% 16.9%; /* Light Gray Input */
+    --ring: 216 12.2% 83.9%; /* Blue Ring */
+    --chart-1: 220 70% 50%; /* Vibrant Orange */
+    --chart-2: 160 60% 45%; /* Green */
+    --chart-3: 30 80% 55%; /* Blue */
+    --chart-4: 280 65% 60%; /* Purple */
+    --chart-5: 340 75% 55%; /* Red */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --font-roboto: var(--font-roboto);
+    --font-opensans: var(--font-opensans);
+    --font-playfair: var(--font-playfair);
+    --font-lora: var(--font-lora);
+    --font-montserrat: var(--font-montserrat);
+    --font-poppins: var(--font-poppins);
+    --font-raleway: var(--font-raleway);
+    --font-inter: var(--font-inter);
+    --font-merriweather: var(--font-merriweather);
+    --font-nunito: var(--font-nunito);
+    --font-sourcesans: var(--font-sourcesans);
+    --font-ubuntu: var(--font-ubuntu);
+    --font-notosansdevanagari: var(--font-notosansdevanagari);
+    --font-aladin: var(--font-aladin);
+  }
+}
+
+/* General styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+.sidebar-resizer {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+.sidebar-resizer:hover {
+  background-color: rgba(0, 0, 0, 0.2);
 }
