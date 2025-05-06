@@ -1,5 +1,7 @@
 {
-  "name": "cvibe",
+  "name": "free-cv-builder",
+  "description": "A free CV builder application using Next.js and Tailwind CSS.",
+  "author": "Naga Sai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
